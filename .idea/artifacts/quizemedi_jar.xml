@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="quizemedi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/quizemedi_jar</output-path>
+    <root id="archive" name="quizemedi.jar">
+      <element id="module-output" name="quizemedi" />
+    </root>
+  </artifact>
+</component>
