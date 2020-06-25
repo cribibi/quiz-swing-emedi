@@ -1,7 +1,7 @@
-package emedi;
+package testbac;
 
 public class Main {
     public static void main(String[] args) {
-        Quiz quiz = new Quiz();
+        QuizEminescu quizEminescu = new QuizEminescu();
     }
 }

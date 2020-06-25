@@ -1,64 +1,61 @@
-package emedi;
+package test;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Quiz1 implements ActionListener {
-
-    String[] questions = {"Cine este protagonistul basmului?",
-            "Cati fii are Craiul?",
+public class TestQuiz implements ActionListener {
+    String [] questions = new String[]{"Cine este protagonistul basmului?",
+            "Câți fii are Craiul?",
             "Care este avertismentul Craiului la plecarea mezinului?",
-            "In ce consta proba Craiului pentru fiii sai?",
-    "Cine îi dă protagonistului numele de Harap-Alb?",
+            "În ce constă proba Craiului pentru fiii săi?",
+            "Cine îi dă protagonistului numele de Harap-Alb?",
             "Regina albinelor îl ajută pe Harap-Alb să...",
             "Din grădina ursului, protagonistul trebuie să aducă…",
             "Ce obiecte își însușește Spânul de la mezin?",
             "Pentru a încheia jurământul, ce gest trebuie să facă Harap-Alb?",
-            "Cine îl sfătuieşte pe Harap- Alb să ceară hainele, armele şi calul de când era mire tatăl său, înainte de a porni în călătorie?"
+            "Cine îl sfătuieşte pe Harap-Alb să ceară hainele, armele şi calul de când era mire tatăl său, înainte de a porni în călătorie?"
     };
 
-    String[][] options = {{"mezinul Craiului", "Spanul", "Craiul", "Imparatul Verde"},
+    String[][] options = {{"mezinul Craiului", "Spânul", "Craiul", "Împăratul Verde"},
             {"un singur fiu", "trei fii", "doi fii", "Craiul nu are copii"},
-            {"sa se fereasca de Span", "sa nu calatoreasca dupa apus", "sa se fereasca de imparatul Rosu", "sa se odihneasca regulat"},
-            {"sa se costumeze in urs si sa ii sperie", "o proba de viteza", "ii pune sa aleaga calul potrivit", "sa aleaga armele potrivite"},
-            {"tatal sau", "Spanul", "Verde-Imparat", "fiica imparatului Ros"},
-            {"sa separe nisipul", "sa o recunoasca pe fiica impartului Ros", "sa aduca apa vie si moarta", "sa se lupte cu balaurul"},
-            {"pielea cerbului cu nestemate", "apa moarta", "salata", "apa vie"},
-            {"hainele si calul", "cartea(scrisoarea) si armele", "bijuteriile", "banii"},
-            {"sa dea mana cu Spanul", "sa semneze un act", "sa sarute palosul", "sa isi schimbe hainele"},
-            {"Craiul", "Sfanta Duminica", "Fratele mai mare", "Calul"}};
+            {"să se ferească de Spân", "să nu călătorească după apus", "să se ferească de împăratul Roșu", "să se odihnească regulat"},
+            {"să se costumeze în urs și să ii sperie", "o probă de viteză", "îi pune să aleagă calul potrivit", "să aleagă armele potrivite"},
+            {"tatăl său", "Spânul", "Verde-Împărat", "fiica împaratului Roșu"},
+            {"să separe nisipul", "să o recunoască pe fiica împăratului Roșu", "să aducă apa vie și moartă", "să se lupte cu balaurul"},
+            {"pielea cerbului cu nestemate", "apa moartă", "salata", "apa vie"},
+            {"hainele și calul", "cartea(scrisoarea) și armele", "bijuteriile", "banii"},
+            {"să dea mana cu Spânul", "să semneze un act", "să sărute paloșul", "să își schimbe hainele"},
+            {"Craiul", "Sfânta Duminică", "Fratele mai mare", "Calul"}};
 
-    char[] answers = {'A', 'B', 'A', 'A', 'B', 'B', 'C', 'B', 'C','B' };
-    String [] feedback ={"Harap Alb, fiul Craiului și mezinul familiei este personajul principal, a cărui evoluție este urmărită în basm.",
-    "Craiul are trei fii. Harap-Alb este cel mai mic dintre aceștia.",
-    "La plecarea fiului cel mic în călătorie, Craiul îl sfătuieș te să nu între în contact cu Omul\n" +
-            "Span, și să se ferească de Împăratul Roșu, pentru a nu avea probleme din care nu va mai\n" +
-            "putea ieși.",
-    "Pentru a testa curajul și iscusința fiilor sai, Craiul se costumează în pielea de urs și îi sperie\n" +
-            "pe cei 3 fii. Singurul care izbuteș te este Mezinul, cel care va continua și călătoria",
-    "Scena coborârii în fântână are ș i semnificaț iile profunde ale unui botez, fiind momentul în\n" +
-            "care protagonistul primeș te un nume de la Spân, completând, astfel, noul statut.",
-    "În schimbul ajutorului oferit de protagonist albinelor, acestea îi promit lui Harap-Alb ajutor\n" +
-            "la nevoie. Astfel, Regina Albinelor îl ajuta să o deosebească pe fiica împăratului de cea\n" +
-            "vitregă, deși cele două aveau înfățișări asemănătoare.",
-    "Una dintre probele la care Spânul îl supune pe Harap-Alb este aceea de a aduce salată din\n" +
-            "grădina ursului.",
-    "După ce Spânul preia statutul mezinului, acesta își  însușește cartea (scrisoarea Craiului care\n" +
-            "dovedește identitatea portagonistului), banii și armele .",
-    "Încheierea jurământului mezinului este marcat de sărutarea paloșului. Acest gest este unul\n" +
-            "reprezentativ perioadei medievale, aminteș te de noblețea cavalerească, și reprezintă\n" +
-            "garanția că nu îl va încălca.",
-    "Sfânta Duminică este cea care îi oferă ajutor mezinului, astfel încât să nu urmeze eșecurile\n" +
-            "fraților săi. Ea apare metamorfozată într-o bătrână cerșetoare, pentru a pune la încercare\n" +
-            "mila și bunătatea protagonistului. După ce acesta îi demonstrează aceste calități, bătrâna îl\n" +
-            "ajută."};
+    char[] answers = {'A', 'B', 'A', 'A', 'B', 'B', 'C', 'B', 'C', 'B'};
+
+    String[] feedback = {"Harap Alb, fiul Craiului și mezinul familiei este personajul principal, a cărui evoluție este urmărită în basm.",
+            "Craiul are trei fii. Harap-Alb este cel mai mic dintre aceștia.",
+            "La plecarea fiului cel mic în călătorie, Craiul îl sfătuiește să nu între în contact cu Omul " +
+                    "Spân, și să se ferească de Împăratul Roșu, pentru a nu avea probleme din care nu va mai " +
+                    "putea ieși.",
+            "Pentru a testa curajul și iscusința fiilor sai, Craiul se costumează în pielea de urs și îi sperie " +
+                    "pe cei 3 fii. Singurul care izbutește este Mezinul, cel care va continua și călătoria",
+            "Scena coborârii în fântână are și semnificațiile profunde ale unui botez, fiind momentul în " +
+                    "care protagonistul primește un nume de la Spân, completând, astfel, noul statut.",
+            "În schimbul ajutorului oferit de protagonist albinelor, acestea îi promit lui Harap-Alb ajutor " +
+                    "la nevoie. Astfel, Regina Albinelor îl ajuta să o deosebească pe fiica împăratului de cea " +
+                    "vitregă, deși cele două aveau înfățișări asemănătoare.",
+            "Una dintre probele la care Spânul îl supune pe Harap-Alb este aceea de a aduce salată din grădina ursului.",
+            "După ce Spânul preia statutul mezinului, acesta își  însușește cartea (scrisoarea Craiului care " +
+                    "dovedește identitatea portagonistului), banii și armele .",
+            "Încheierea jurământului mezinului este marcat de sărutarea paloșului. Acest gest este unul " +
+                    "reprezentativ perioadei medievale, amintește de noblețea cavalerească, și reprezintă " +
+                    "garanția că nu îl va încălca.",
+            "Sfânta Duminică este cea care îi oferă ajutor mezinului, astfel încât să nu urmeze eșecurile fraților săi. Ea apare metamorfozată într-o bătrână cerșetoare, pentru a pune la încercare\n" +
+                    "mila și bunătatea protagonistului. După ce acesta îi demonstrează aceste calități, bătrâna îl ajută."};
     char guess;
     char answer;
     char index;
     int correct_guesses = 0;
-    int total_question = questions.length;
+    int total_question;
     int result;
     int seconds = 15;
     JFrame frame = new JFrame();
@@ -83,14 +80,13 @@ public class Quiz1 implements ActionListener {
         public void actionPerformed(ActionEvent actionEvent) {
             seconds--;
             seconds_left.setText(String.valueOf(seconds));
-            if (seconds<=0){
+            if (seconds <= 0) {
                 displayAnswer();
             }
         }
     });
 
-
-    public Quiz1() {
+    public TestQuiz() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1200, 750);
         frame.getContentPane().setBackground(new Color(50, 50, 50));
@@ -120,7 +116,7 @@ public class Quiz1 implements ActionListener {
         textFeedback.setWrapStyleWord(true);
         textFeedback.setBackground(new Color(25, 25, 25));
         textFeedback.setForeground(new Color(25, 255, 0));
-        textFeedback.setFont(new Font("MV Boli", Font.BOLD, 30));
+        textFeedback.setFont(new Font("MV Boli", Font.BOLD, 20));
         textFeedback.setAlignmentX(Component.CENTER_ALIGNMENT);
         textFeedback.setBorder(BorderFactory.createBevelBorder(1));
         textFeedback.setEditable(false);
@@ -217,15 +213,17 @@ public class Quiz1 implements ActionListener {
         frame.add(textField);
         frame.add(textarea);
         frame.setVisible(true);
+    }
+
+    public void startQuiz(){
         nextQuestion();
     }
 
     public void nextQuestion() {
-
         if (index >= total_question) {
             results();
         } else {
-            textField.setText("Intrebarea numarul " + (index + 1));
+            textField.setText("Întrebarea numărul " + (index + 1));
             textarea.setText(questions[index]);
             answer_labelA.setText(options[index][0]);
             answer_labelB.setText(options[index][1]);
@@ -233,11 +231,11 @@ public class Quiz1 implements ActionListener {
             answer_labelD.setText(options[index][3]);
             timer.start();
         }
-
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+
         buttonA.setEnabled(false);
         buttonB.setEnabled(false);
         buttonC.setEnabled(false);
@@ -262,6 +260,7 @@ public class Quiz1 implements ActionListener {
                 correct_guesses++;
             }
         }
+
         if (actionEvent.getSource() == buttonD) {
             answer = 'D';
             if (answer == answers[index]) {
@@ -272,7 +271,17 @@ public class Quiz1 implements ActionListener {
     }
 
     public void displayAnswer() {
+        int t=0;
         timer.stop();
+        if (answer!=answers[index]){
+            textFeedback.setText(feedback[index]);
+            t=6500;
+
+        }else{
+            textFeedback.setText("Răspuns corect!");
+            t=2000;
+        }
+
         buttonA.setEnabled(false);
         buttonB.setEnabled(false);
         buttonC.setEnabled(false);
@@ -289,10 +298,8 @@ public class Quiz1 implements ActionListener {
         if (answers[index] != 'D') {
             answer_labelD.setForeground(new Color(255, 0, 0));
         }
-        textFeedback.setText(feedback[index]);
 
-
-        Timer pause = new Timer(2000, new ActionListener() {
+        Timer pause = new Timer(t, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 answer_labelA.setForeground(new Color(25, 255, 0));
@@ -301,9 +308,8 @@ public class Quiz1 implements ActionListener {
                 answer_labelD.setForeground(new Color(25, 255, 0));
                 textFeedback.setText("");
 
-
-                answer= ' ';
-                seconds=15;
+                answer = ' ';
+                seconds = 15;
                 seconds_left.setText(String.valueOf(seconds));
                 buttonA.setEnabled(true);
                 buttonB.setEnabled(true);
@@ -323,7 +329,7 @@ public class Quiz1 implements ActionListener {
         buttonB.setEnabled(false);
         buttonC.setEnabled(false);
         buttonD.setEnabled(false);
-        result = (int)((correct_guesses/(double)total_question)*100);
+        result = (int) ((correct_guesses / (double) total_question) * 100);
         textField.setText("Rezultate: ");
         textarea.setText("");
         answer_labelA.setText("");
@@ -331,11 +337,9 @@ public class Quiz1 implements ActionListener {
         answer_labelC.setText("");
         answer_labelD.setText("");
 
-        number_right.setText("("+correct_guesses+"/"+total_question+")");
-        percentage.setText(result+"%");
+        number_right.setText("(" + correct_guesses + "/" + total_question + ")");
+        percentage.setText(result + "%");
         frame.add(number_right);
         frame.add(percentage);
-
-
     }
 }
